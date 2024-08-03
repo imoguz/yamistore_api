@@ -11,7 +11,7 @@ module.exports = {
         in: 'body',
         required: true,
         schema: {
-          "user_id": "ObjectId",
+          "user_id": "string",
           "product_id": "ObjectId",
           "variant_id": "ObjectId",
           "quantity": "Number",
@@ -50,7 +50,6 @@ module.exports = {
     */
 
     const data = await Cart.findOne({ _id: req.params.id }).populate([
-      "user_id",
       { path: "variant_id", populate: ["size_id", "color_id"] },
       { path: "product_id", populate: "discount" },
     ]);
@@ -75,7 +74,6 @@ module.exports = {
     const data = await req.queryHandler(
       Cart,
       [
-        "user_id",
         { path: "variant_id", populate: ["size_id", "color_id"] },
         { path: "product_id", populate: "discount" },
       ],
@@ -92,7 +90,7 @@ module.exports = {
         in: 'body',
         required: true,
         schema: {
-          "user_id": "ObjectId",
+          "user_id": "string",
           "product_id": "ObjectId",
           "variant_id": "ObjectId",
           "quantity": "Number",

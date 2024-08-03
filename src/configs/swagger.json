@@ -2648,7 +2648,7 @@
               "properties": {
                 "user_id": {
                   "type": "string",
-                  "example": "ObjectId"
+                  "example": "string"
                 },
                 "product_id": {
                   "type": "string",
@@ -2817,7 +2817,7 @@
               "properties": {
                 "user_id": {
                   "type": "string",
-                  "example": "ObjectId"
+                  "example": "string"
                 },
                 "product_id": {
                   "type": "string",
@@ -6108,9 +6108,9 @@
             "type": {
               "type": "function"
             },
-            "ref": {
-              "type": "string",
-              "example": "User"
+            "trim": {
+              "type": "boolean",
+              "example": true
             },
             "required": {
               "type": "boolean",
