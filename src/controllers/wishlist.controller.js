@@ -11,7 +11,7 @@ module.exports = {
         in: 'body',
         required: true,
         schema: {
-          "user_id": "ObjectId",
+          "user_id": "string",
           "product_id": "ObjectId",
           }
         }
@@ -37,7 +37,6 @@ module.exports = {
     */
 
     const data = await Wishlist.findOne({ _id: req.params.id }).populate([
-      "user_id",
       {
         path: "product_id",
         populate: { path: "variants", populate: ["color_id", "size_id"] },
@@ -64,7 +63,6 @@ module.exports = {
     const data = await req.queryHandler(
       Wishlist,
       [
-        "user_id",
         {
           path: "product_id",
           populate: { path: "variants", populate: ["color_id", "size_id"] },
@@ -84,7 +82,7 @@ module.exports = {
         in: 'body',
         required: true,
         schema: {
-          "user_id": "ObjectId",
+          "user_id": "string",
           "product_id": "ObjectId",
           }
         }
