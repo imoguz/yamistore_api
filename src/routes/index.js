@@ -16,6 +16,7 @@ router.use("/promotions", require("./promotion.route"));
 router.use("/reviews", require("./review.route"));
 router.use("/stores", require("./store.route"));
 router.use("/banners", require("./banner.route"));
+router.use("/gifts", require("./gift.route"));
 router.use("/wishlists", require("./wishlist.route"));
 router.use("/documents", require("./document.route"));
 
